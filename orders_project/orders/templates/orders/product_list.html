@@ -1,0 +1,41 @@
+<!-- orders/templates/orders/product_list.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список товаров</title>
+</head>
+<body>
+    <h2>Список товаров</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название товара</th>
+                <th>Категория</th>
+                <th>Статус активности</th>
+                <th>Цена</th>
+                <th>Количество заказов за прошлый месяц</th>
+                <th>Количество заказов за текущий месяц</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.is_active }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.orders_last_month }}</td>
+                    <td>{{ product.orders_this_month }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p><a href="{% url 'logout' %}">Выйти</a></p>
+</body>
+</html>
