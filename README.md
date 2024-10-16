@@ -21,7 +21,7 @@
 Клонируйте проект на локальный компьютер:
 
 ```bash
-git clone <URL вашего репозитория>
+git clone https://github.com/Skils261/django_tz.git
 cd orders_project
 ```
 
